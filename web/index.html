@@ -1,0 +1,102 @@
+<!DOCTYPE html>
+<html lang="id">
+<head>
+	<title>SMK Tamtama 1 Sidareja</title>
+    <meta charset="UTF-8">
+    <style>
+        body {
+            background: #0d1117;
+            color: #e6edf3;
+            font-family: monospace;
+            margin: 0;
+            padding: 0;
+        }
+
+        .container {
+            max-width: 900px;
+            margin: auto;
+            padding: 30px;
+        }
+
+        h1, h2 {
+            color: #58a6ff;
+        }
+
+        .meta {
+            background: #161b22;
+            padding: 15px;
+            border-left: 4px solid #58a6ff;
+            margin-bottom: 30px;
+	    font-size: 16px;
+        }
+
+        p {
+            line-height: 1.7;
+            margin-bottom: 15px;
+        }
+
+        .step {
+            margin-bottom: 40px;
+	    font-size: 14px;
+        }
+
+        img {
+            max-width: 100%;
+            border-radius: 8px;
+            margin-top: 10px;
+            align: center;
+	    box-shadow: 0 0 15px rgba(0,0,0,0.6);
+        }
+
+        .code {
+            background: #161b22;
+            border-radius: 6px;
+	    padding: 5px;
+            overflow-x: auto;
+            margin-top: 10px;
+        }
+
+        .flag {
+            background: #1f6feb;
+            color: #fff;
+            padding: 15px;
+            border-radius: 8px;
+            font-weight: bold;
+            text-align: center;
+	    font-size: 16px;
+        }
+
+        footer {
+            text-align: center;
+            opacity: 0.5;
+            margin-top: 50px;
+        }
+    </style>
+</head>
+<body>
+    <div class="container">
+        <h1>WRITE-UP PICOCTF: DISKO 1</h1>
+       
+        <div class="meta">
+                <p><b>Category: Forensic</b></p>
+		<p><b>Difficulty: Easy</b></p>
+		<p><b>Description: Can you find the flag in this disk image? Download the disk image here.</b></p>
+		<p><b>Hint: Maybe Strings could help? If only there was a way to do that?.</b></p>
+        	<center><img src="img/Challange.png" alt="Recon Screenshot"></center>
+            </div>
+<div class="step">
+        <h2>Solution</h2>
+        <p>Pada tantangan kali ini, kami diberikan sebuah file disk image. Kami mengunduh file tersebut dan diketahui masih terkompresi dengan format .gzip. Oleh karena itu, kami mengekstraknya menggunakan perintah  <span class="code"> gzip</span>.</p>
+	<center><img src="img/Gzip.png" alt="Recon Screenshot"></center>
+	<p>Setelah proses ekstraksi selesai, diperoleh sebuah file disk image dengan format .dd. Sesuai dengan hint yang diberikan, kami menggunakan perintah strings pada file tersebut, kemudian dikombinasikan dengan grep pico menjadi <span class="code">strings disko-1.dd | grep pico</span> untuk memfilter teks yang sesuai dengan format flag.</p>
+	<center><img src="img/Strings.png" alt="Recon Screenshot"></center>
+	<p>Boommm, flag ditemukan.</p>
+	<div class="flag">
+            FLAG:picoCTF{1t5_ju5t_4_5tr1n9_be6031da}
+        	</div>
+    </div>
+       <footer> © 2026 Lab-SMK</footer>
+    </div>
+
+</body>
+</html>
